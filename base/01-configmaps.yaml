@@ -14,7 +14,7 @@ data:
   ENVIRONMENT:                  "production"
   CLOUD_PROVIDER:               "gcp"
   CLOUD_REGION:                 "us-central1"
-  GCP_PROJECT_ID:               "cicdtraining-498421"
+  GCP_PROJECT_ID:               "otellabs"
   OTEL_EXPORTER_OTLP_ENDPOINT: "http://otel-collector-svc:4317"
   DATABASE_URL:                 "postgresql://app:secret@postgres-svc:5432/appdb"
   SERVICE_B_URL:                "http://service-b-svc:8001"
@@ -118,7 +118,7 @@ data:
         logs:
           receivers: [otlp]
           processors: [memory_limiter, resource, batch]
-          exporters: [googlecloud, logging]
+          exporters: [logging]
       telemetry:
         logs:
           level: info
